@@ -1,0 +1,107 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    @apply font-primary;
+  }
+} */
+input {
+  width: 100%;
+  padding: 12px 12px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid var(--ast-border-color);
+  background: #f5f5fa;
+}
+input:focus{
+  background-color: #E7E7E7;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-color: #1C21F5;
+  outline: none;
+}
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+}
+button {
+  background-color: #1C21F5;
+  color: white;
+  padding: 10px 0px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  border-radius: 5px;
+  font-weight: 400;
+}
+button:hover {
+  opacity: 0.8;
+}
+button:focus{
+  background-color: #E7E7E7;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-color: #1C21F5;
+  outline: none;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}  
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+.login>h2{
+  font-weight: bold;
+}
+span a{
+  color: #1C21F5;
+}
+.create{
+  display: flex;
+  justify-content: center;
+  color: #a18f8f;
+}
+body{
+  text-align: center;
+}
+.register-form{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.login-form{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.required-msg{
+  color: #f50a0a;
+}
+.login{
+  margin-top: 135px;
+}
+.registration{
+  margin-top: 125px;
+}
+
+.button-parent{
+  display: flex;
+  justify-content: center;
+}
