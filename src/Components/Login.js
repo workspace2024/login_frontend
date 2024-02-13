@@ -7,7 +7,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { Helmet } from "react-helmet";
 
 function Login() {
-  const [loading, setloading] = useState(false);
   const register_validation_schema = yup.object().shape({
     Email: yup.string().email("Invalid Email").required("Email is Required"),
     Password: yup.string().required("Password is Required"),
@@ -20,7 +19,6 @@ function Login() {
       },
       validationSchema: register_validation_schema,
       onSubmit: async (user_data) => {
-        setloading(true);
         try {
           const login = await axios.post(
             "http://localhost:8000/api/v1/users/login",
@@ -30,10 +28,7 @@ function Login() {
             }
           );
           toast.success("Login Successful");
-          console.log(login);
-          setloading(false);
         } catch (error) {
-          setloading(false);
           console.log(error);
           toast.error(error.response.data.Error);
         }
