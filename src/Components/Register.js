@@ -7,7 +7,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { Helmet } from "react-helmet";
 
 function Register() {
-  const [loading, setloading] = useState(false);
   const register_validation_schema = yup.object().shape({
     FName: yup.string().required("first name is required"),
     LName: yup.string().required("last name is required"),
@@ -29,16 +28,13 @@ function Register() {
       },
       validationSchema: register_validation_schema,
       onSubmit: async (user_data) => {
-        setloading(true);
         try {
           await axios.post(
             "http://localhost:8000/api/v1/users/adduser",
             user_data
           );
           toast.success("User Created Successfully");
-          setloading(false);
         } catch (error) {
-          setloading(false);
           toast.error(error.response.data.Error);
         }
       },
